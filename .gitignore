@@ -1,0 +1,6 @@
+﻿__pycache__/
+*.pyc
+temp_test_suspicious.py
+ioc_extractor (2).py
+PhiUSIIL_Phishing_URL_Dataset.csv
+phiusiil+phishing+url+dataset/
