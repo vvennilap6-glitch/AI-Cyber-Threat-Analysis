@@ -33,6 +33,51 @@ st.set_page_config(
 
 
 # =========================================================
+# PROFESSIONAL UI STYLING
+# =========================================================
+
+st.markdown("""
+<style>
+    .main-title {
+        font-size: 2.35rem;
+        font-weight: 750;
+        margin-bottom: 0.15rem;
+        letter-spacing: -0.02em;
+    }
+    .main-subtitle {
+        font-size: 1.05rem;
+        color: #6b7280;
+        margin-bottom: 1.2rem;
+    }
+    .platform-card {
+        border: 1px solid rgba(128, 128, 128, 0.22);
+        border-radius: 14px;
+        padding: 1rem 1.1rem;
+        margin-bottom: 1.2rem;
+        background: rgba(128, 128, 128, 0.05);
+    }
+    .platform-label {
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        opacity: 0.72;
+        margin-bottom: 0.25rem;
+    }
+    .platform-text {
+        margin: 0;
+        line-height: 1.55;
+    }
+    div[data-testid="stMetric"] {
+        border: 1px solid rgba(128, 128, 128, 0.18);
+        border-radius: 12px;
+        padding: 0.75rem;
+    }
+</style>
+""", unsafe_allow_html=True)
+
+
+# =========================================================
 # SESSION STATE
 # =========================================================
 
@@ -227,14 +272,12 @@ def build_ioc_relationships(iocs, history=None):
 # HEADER
 # =========================================================
 
-st.title("🛡️ AI Cyber Threat Analysis Platform")
-
-st.write(
-    "Analyze suspicious URLs, files, emails, QR codes and domains "
-    "using AI-powered and rule-based security analysis."
+st.markdown(
+    '<div class="main-title">🛡️ AI Cyber Threat Analysis Platform</div>',
+    unsafe_allow_html=True
 )
 
-st.markdown("---")
+
 
 
 # =========================================================
@@ -279,11 +322,6 @@ analysis_type = st.sidebar.radio(
 if analysis_type == "🔗 URL Threat Scanner":
 
     st.header("🔗 URL Threat Scanner")
-
-    st.write(
-        "Analyze a URL using layered security checks "
-        "and AI-based phishing detection."
-    )
 
     url = st.text_input(
         "Enter a suspicious URL",
@@ -3794,19 +3832,3 @@ elif analysis_type == "📜 Scan History":
 
             st.rerun()
 
-
-# =========================================================
-# FOOTER
-# =========================================================
-
-st.markdown("---")
-
-st.caption(
-
-    "🛡️ AI Cyber Threat Analysis Platform | "
-    "URL • File • Email • QR • Domain/IP • "
-    "Malware Intelligence • Threat Correlation • "
-    "IOC Correlation • Threat Graph • Incident Response • "
-    "Threat Intelligence • Threat Intelligence Dashboard"
-
-)
